@@ -1,1 +1,3 @@
-# qmk_redox_rev1_layout
+#Kpalatzky´s awesome layout
+
+Just a crazy german keyboard layout.
