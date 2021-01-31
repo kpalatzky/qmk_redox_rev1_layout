@@ -25,33 +25,29 @@ enum custom_keycodes {
 
 // Shortcut to make keymap more readable
 #define LT_SYM LT(_SYMBOL, KC_SPC)
-// #define LT_SYM LT(_SYMBOL, KC_SPC)
-// #define SYM_L   MO(_SYMBOL)
+#define LT_NAV LT(_NAVIGATION, KC_BSPC)
+#define LT_NUM LT(_NUMBER, KC_ENT)
+#define CTL_SPC CTL_T(KC_SPC)
 
-// #define KC_ALAS LALT_T(KC_PAST)
-// #define KC_CTPL LCTL_T(KC_PSLS)
+#define KC_NAGR LT(_NAVIGATION, DE_CIRC)
+#define KC_NAMI LT(_NAVIGATION, DE_SS)
 
-// #define KC_NAGR LT(_NAVIGATION, DE_CIRC)
-// #define KC_NAMI LT(_NAVIGATION, DE_SS)
-
-// #define KC_ADEN LT(_ADJUST, KC_END)
-// #define KC_ADPU LT(_ADJUST, KC_PGUP)
-
-
+#define KC_ADEN LT(_ADJUST, KC_END)
+#define KC_ADPU LT(_ADJUST, KC_PGUP)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_BASE] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                                           ┌────────┬────────┬────────┬────────┬────────┬────────┐
-      KC_NAGR ,DE_1    ,DE_2    ,DE_3    ,DE_4    ,DE_5    ,                                            DE_6    ,DE_7    ,DE_8    ,DE_9    ,DE_0    ,KC_NAMI, 
+      KC_NAGR ,DE_1    ,DE_2    ,DE_3    ,DE_4    ,DE_5    ,                                            DE_6    ,DE_7    ,DE_8    ,DE_9    ,DE_0    ,KC_NAMI,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐                         ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-      KC_TAB ,DE_Q    ,DE_W    ,DE_E    ,DE_R    ,DE_T    ,SYM_L   ,                          SYM_L   ,DE_Z    ,DE_U    ,DE_I    ,DE_O    ,DE_P    ,DE_UE   ,
+      KC_TAB ,DE_Q    ,DE_W    ,DE_E    ,DE_R    ,DE_T    ,XXXXXXX ,                          XXXXXXX ,DE_Z    ,DE_U    ,DE_I    ,DE_O    ,DE_P    ,DE_UE   ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┤                         ├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
       KC_ESC ,DE_A    ,DE_S    ,DE_D    ,DE_F    ,DE_G    ,DE_ACUT ,                          DE_PLUS ,DE_H    ,DE_J    ,DE_K    ,DE_L    ,DE_OE   ,DE_AE   ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┐       ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
       KC_LSFT,DE_Y    ,DE_X    ,DE_C    ,DE_V    ,DE_B    ,KC_ADPU ,KC_PGDN ,        KC_HOME ,KC_ADEN ,DE_N    ,DE_M    ,DE_COMM ,DE_DOT  ,DE_MINS ,KC_RSFT ,
   //├────────┼────────┼────────┼────────┼────┬───┴────┬───┼────────┼────────┤       ├────────┼────────┼───┬────┴───┬────┼────────┼────────┼────────┼────────┤
-      KC_LGUI,KC_PPLS ,KC_PMNS ,KC_ALAS ,     KC_CTPL ,    KC_BSPC ,KC_DEL  ,        KC_RALT ,KC_ENT  ,     LT_SYM ,     KC_LEFT ,KC_DOWN ,KC_UP   ,KC_RGHT
+      KC_LGUI,KC_PPLS ,KC_PMNS ,KC_LALT ,     CTL_SPC ,    LT_NAV  ,KC_DEL  ,        KC_RALT ,LT_NUM  ,     LT_SYM ,     KC_LEFT ,KC_DOWN ,KC_UP   ,KC_RGHT
   //└────────┴────────┴────────┴────────┘    └────────┘   └────────┴────────┘       └────────┴────────┘   └────────┘    └────────┴────────┴────────┴────────┘
   ),
 
@@ -79,10 +75,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┐       ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
       KC_LSFT,DE_TILD ,DE_BSLS ,DE_UNDS ,DE_EXLM ,DE_MINS ,_______ ,_______ ,        _______ ,_______ ,DE_PLUS ,DE_ASTR ,DE_COMM ,DE_SLSH ,DE_AT   ,XXXXXXX ,
   //├────────┼────────┼────────┼────────┼────┬───┴────┬───┼────────┼────────┤       ├────────┼────────┼───┬────┴───┬────┼────────┼────────┼────────┼────────┤
-      _______,_______ ,_______ ,XXXXXXX ,     XXXXXXX ,    _______ ,_______ ,        _______ ,_______ ,    XXXXXXX ,     XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX
+      _______,_______ ,_______ ,XXXXXXX ,     _______ ,    _______ ,_______ ,        _______ ,_______ ,    _______ ,     XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX
   //└────────┴────────┴────────┴────────┘    └────────┘   └────────┴────────┘       └────────┴────────┘   └────────┘    └────────┴────────┴────────┴────────┘
   ),
-	
+
   [_NUMBER] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                                           ┌────────┬────────┬────────┬────────┬────────┬────────┐
       _______ ,_______ ,_______ ,_______ ,_______ ,_______ ,                                            _______ ,_______ ,_______ ,_______ ,_______ ,_______ ,
@@ -107,7 +103,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┐       ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
       XXXXXXX ,XXXXXXX ,XXXXXXX,XXXXXXX ,XXXXXXX ,XXXXXXX ,_______ ,_______ ,        _______ ,XXXXXXX ,XXXXXXX ,KC_LEFT ,KC_DOWN ,KC_RIGHT ,XXXXXXX ,XXXXXXX ,
   //├────────┼────────┼────────┼────────┼────┬───┴────┬───┼────────┼────────┤       ├────────┼────────┼───┬────┴───┬────┼────────┼────────┼────────┼────────┤
-      XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,     KC_ACL2 ,   KC_ACL0 ,KC_ACL1 ,        KC_BTN3 ,KC_BTN2 ,    KC_BTN1 ,     XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX
+      XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,     KC_ACL2 ,   XXXXXXX ,KC_ACL1 ,        KC_BTN3 ,KC_BTN2 ,    KC_BTN1 ,     XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX
   //└────────┴────────┴────────┴────────┘    └────────┘   └────────┴────────┘       └────────┴────────┘   └────────┘    └────────┴────────┴────────┴────────┘
   ),
 
